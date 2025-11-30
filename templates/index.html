@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>LedgerLock – AML + Ethereum</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 2rem;
+      background: #0b1120;
+      color: #e5e7eb;
+    }
+
+    h1 { margin-bottom: 0.8rem; }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+      gap: 1rem;
+    }
+
+    .card {
+      background: #020617;
+      border-radius: 0.75rem;
+      padding: 1.3rem;
+      margin-bottom: 1rem;
+      border: 1px solid #1f2937;
+    }
+
+    label {
+      display: block;
+      margin-top: 0.6rem;
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+
+    input {
+      margin-top: 0.2rem;
+      padding: 0.45rem;
+      border-radius: 0.4rem;
+      border: 1px solid #1f2937;
+      width: 100%;
+      background: #020617;
+      color: #e5e7eb;
+    }
+
+    button {
+      margin-top: 0.8rem;
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    button.secondary { background: #7c3aed; }
+
+    .row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+    }
+
+    .result {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      background: #020617;
+      border: 1px solid #1f2937;
+    }
+
+    .muted { color: #6b7280; font-size: 0.8rem; }
+
+    .pill {
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+    }
+
+    .pill-ok { background: #064e3b; color: #bbf7d0; }
+    .pill-bad { background: #7f1d1d; color: #fecaca; }
+
+    #live-blocks {
+      min-height: 200px;
+      border: 1px dashed #1f2937;
+      border-radius: 6px;
+      padding: 10px;
+    }
+
+    .live-block {
+      background: #020617;
+      border: 1px solid #1f2937;
+      padding: 10px;
+      margin-bottom: 8px;
+      border-radius: 8px;
+    }
+
+    .eth {
+      color: #60a5fa;
+      font-size: 0.85rem;
+      margin-top: 3px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Anti-Money Laundering System – AI + Ethereum</h1>
+
+<div class="layout">
+
+<!-- LEFT -->
+<div>
+
+  <div class="card">
+    <h2>🔁 Auto Transaction Simulator</h2>
+    <form method="post">
+      <button type="submit" name="toggle_auto" class="secondary">
+        {% if auto_enabled %} Stop Auto {% else %} Start Auto {% endif %}
+      </button>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>Manual Transaction</h2>
+
+    <form method="post">
+      <div class="row">
+        <div><label>Amount</label><input name="amount" required></div>
+        <div><label>Sender Balance</label><input name="sender_balance" required></div>
+        <div><label>Receiver Balance</label><input name="receiver_balance" required></div>
+      </div>
+
+      <div class="row">
+        <div><label>Speed</label><input name="transaction_speed" value="2"></div>
+        <div><label>Sender Country</label><input name="sender_country" value="IN"></div>
+        <div><label>Receiver Country</label><input name="receiver_country" value="US"></div>
+      </div>
+
+      <div class="row">
+        <div><label>Sender ID</label><input name="sender_id" value="IN12345"></div>
+        <div><label>Receiver ID</label><input name="receiver_id" value="US67890"></div>
+      </div>
+
+      <button>Evaluate</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+      <p>Status:
+        {% if result.status == "approved" %}
+          <span class="pill pill-ok">APPROVED</span>
+        {% else %}
+          <span class="pill pill-bad">FLAGGED</span>
+        {% endif %}
+      </p>
+      <p>Fraud Probability: <b>{{ (result.fraud_probability * 100)|round(2) }}%</b></p>
+    </div>
+    {% endif %}
+  </div>
+
+</div>
+
+<!-- RIGHT -->
+<div>
+
+  <div class="card">
+    <h3>🔗 Live Blockchain + Ethereum</h3>
+    <div id="live-blocks">Loading...</div>
+  </div>
+
+  <div class="card">
+    <h3>🌍 Risk Heat Map</h3>
+    <canvas id="riskChart" height="180"></canvas>
+  </div>
+
+</div>
+</div>
+
+<script>
+async function loadLiveBlocks() {
+  const res = await fetch("/api/chain?limit=200");
+  const blocks = await res.json();
+  const container = document.getElementById("live-blocks");
+
+  container.innerHTML = "";
+
+  if (!blocks.length) {
+    container.innerHTML = "<div class='muted'>No blocks yet</div>";
+    return;
+  }
+
+  blocks.sort((a, b) => a.index - b.index);
+
+  blocks.forEach(b => {
+    const div = document.createElement("div");
+    div.className = "live-block";
+
+    // ✅ CORRECT PATHS
+    const ethHash =
+      b.data?.eth_tx_hash ||
+      b.eth_tx_hash ||
+      "Pending";
+
+    const ethBlock =
+      b.data?.eth_block_number ||
+      b.eth_block_number ||
+      "N/A";
+
+    const localHash = b.hash?.slice(0, 20) || "N/A";
+    const status = b.data?.status || "SYSTEM";
+
+    div.innerHTML = `
+      <strong>Block #${b.index}</strong><br>
+      Status: ${status}<br>
+      Local Hash: <span class="muted">${localHash}...</span>
+      <div class="eth">
+        Ethereum Block: ${ethBlock}<br>
+        Tx: ${ethHash !== "Pending" ? ethHash : "Pending"}
+      </div>
+    `;
+
+    container.appendChild(div);
+  });
+}
+
+setInterval(loadLiveBlocks, 4000);
+loadLiveBlocks();
+
+// ================== HEAT MAP ==================
+let riskChart = null;
+
+async function loadRiskMap() {
+  const res = await fetch("/api/risk-map");
+  const data = await res.json();
+
+  if (!data.length) return;
+
+  const labels = data.map(d => d.country);
+  const values = data.map(d => Math.max(d.avg_risk, 0.05));
+
+  if (riskChart) riskChart.destroy();
+
+  riskChart = new Chart(document.getElementById("riskChart"), {
+    type: "bar",
+    data: {
+      labels,
+      datasets: [{ label: "Risk", data: values }]
+    },
+    options: {
+      scales: {
+        y: {
+          min: 0,
+          max: 1,
+          ticks: { callback: v => (v * 100) + "%" }
+        }
+      }
+    }
+  });
+}
+
+setInterval(loadRiskMap, 6000);
+loadRiskMap();
+</script>
+
+</body>
+</html>
+

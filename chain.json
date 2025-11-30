@@ -1,0 +1,239 @@
+[
+    {
+        "index": 1,
+        "timestamp": 1764417250,
+        "data": {
+            "system": "Blockchain Initialized"
+        },
+        "merkle_root": "3fe49fd9c2aa76d51e407639ac9157bef1aa3aa85fe9d5c70ac9f4985d49e0ad",
+        "previous_hash": "0",
+        "hash": "720ef3c633175beb0ef16404868d2950d5594c8ec58e937ddf616f1ad671e391",
+        "nonce": 0,
+        "difficulty": 0,
+        "consensus": "poa",
+        "signature": "1ec00bea8748bc00f46c961eb04fe70b93b0b37a371b24c54f02f10e841202a8f22b7931b86ce19bf27a6c01638767a2143a130bbdf37e756b7c36a2734defdd84f4ba68dfdb18f0ff3d0bc710bbca218ce5903ecc1a44c3374d244d0b307d1af3be69db18efa624b6883f41ac93af0fcf7c7e4759acaebc98e3cf3c1b651ccbc315e9db3ee5a3ff52b3512f635a4bb2e447974b3432e249e14724d7f2fc76cfc37d22e3aa4e1677120951aa83a4f77f5ea607eb42355dc401c59182d3fb4e14dac24994835cd9fcd8a36563a67c5e40dc377bff73d2301b2eea7cbf3966f58a549ccf145992210b1a2c1b8c81dac83b1ddb8f51151152d6143baaa164129f34",
+        "public_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs/6AqcwozSX4lHkWsnN7\nJbTHVlzSn3K01JJiT3vN7RI10+WI+TrTOIEMWZYwjcDpO1HdcC8+W99EarS9TWbR\ncLgZ/raD9XiA+CMaupzguma8K1l+F+2vOV7OliEAy2fGSdMSNie5g7yrNjbbkSRs\nZFapZaiJ7B1O4A5RBhwt+t5MQXXEpLl4y7xO95/fXtfVmxTsMSnzoY1EAD9tmowl\n31J5Hz5Qx77I/BKHvUoIW2CSxrlrOioUfCVCuUcor5CqlZJ3gj9BziuXn1IWX4W6\nxVVexNNrnICO8fOWt6EY93kJbVlos1H80MxYUSVUJOkbjW+dAZt0fqSJuRmhXTID\nZwIDAQAB\n-----END PUBLIC KEY-----\n",
+        "authority_id": "0e50610d6be44730"
+    },
+    {
+        "index": 2,
+        "timestamp": 1764417331,
+        "data": {
+            "external_id": "MANUAL-1764417331",
+            "transaction": {
+                "amount": 3000.0,
+                "sender_balance": 40000.0,
+                "receiver_balance": 30000.0,
+                "transaction_speed": 2,
+                "sender_country": "IN",
+                "receiver_country": "US",
+                "sender_id": "IN12345",
+                "receiver_id": "US67890",
+                "eth_tx_hash": "cfbc42226685fd17bdafd3d611b7c8266cb92224e0d7393e186ac4255797e8b4",
+                "eth_block_number": 1
+            },
+            "kyc_ok": true,
+            "rule_compliant": true,
+            "rule_reason": "Compliant",
+            "fraud_probability": 0.235,
+            "is_fraud": false,
+            "status": "approved",
+            "explanation": {
+                "error": "The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()"
+            },
+            "eth_tx_hash": "cfbc42226685fd17bdafd3d611b7c8266cb92224e0d7393e186ac4255797e8b4",
+            "eth_block_number": 1,
+            "ethereum": {
+                "eth_tx_hash": "cfbc42226685fd17bdafd3d611b7c8266cb92224e0d7393e186ac4255797e8b4",
+                "eth_block_number": 1,
+                "contract": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9"
+            }
+        },
+        "merkle_root": "1114f2d9634c88ce338753ced794e4733e9a8faf744f4814b59b3d55146c3d3b",
+        "previous_hash": "720ef3c633175beb0ef16404868d2950d5594c8ec58e937ddf616f1ad671e391",
+        "hash": "8301bad96ca9fa9156e91978d5efc6d05ed44df051538d3fd3ee1abe6d037a4f",
+        "nonce": 0,
+        "difficulty": 0,
+        "consensus": "poa",
+        "signature": "6bb7201ae9acd91052b8348de98dd15eb2a67eb010bb805d3a70bc7034c2634e5e32157d01ee40cafe0de074b493d8d2f444d3bbe5360cfc0d158090d59a17efc7d42b2eff958e41308eb74749384355bf2e0981eb3bdc3111701f3aee2cf541940671bbc9eec8f7cc3681bfcce299eb0547f113602b8ef73e65e13e939e0a30c29adaa40e3032bafd1a817721a4ac2a94f3146f52dfe012978d04ad9c4121da9e793f4c0f371b24c108e62e6c6fc752c37b6c31dcc6124814c632d08860dc3a2f70b16c5fa44b8d46ea75eb0363ec93aec14653c96e167e3c7db1cc70a977b311b4263860bdd3328e7a429ef5bbb5e65356afc50375f65bb50f6ed8e14da4b0",
+        "public_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs/6AqcwozSX4lHkWsnN7\nJbTHVlzSn3K01JJiT3vN7RI10+WI+TrTOIEMWZYwjcDpO1HdcC8+W99EarS9TWbR\ncLgZ/raD9XiA+CMaupzguma8K1l+F+2vOV7OliEAy2fGSdMSNie5g7yrNjbbkSRs\nZFapZaiJ7B1O4A5RBhwt+t5MQXXEpLl4y7xO95/fXtfVmxTsMSnzoY1EAD9tmowl\n31J5Hz5Qx77I/BKHvUoIW2CSxrlrOioUfCVCuUcor5CqlZJ3gj9BziuXn1IWX4W6\nxVVexNNrnICO8fOWt6EY93kJbVlos1H80MxYUSVUJOkbjW+dAZt0fqSJuRmhXTID\nZwIDAQAB\n-----END PUBLIC KEY-----\n",
+        "authority_id": "0e50610d6be44730",
+        "eth_tx_hash": "cfbc42226685fd17bdafd3d611b7c8266cb92224e0d7393e186ac4255797e8b4",
+        "eth_block_number": 1
+    },
+    {
+        "index": 3,
+        "timestamp": 1764417396,
+        "data": {
+            "external_id": "AUTO-1764417396",
+            "transaction": {
+                "amount": 6105,
+                "sender_balance": 85535,
+                "receiver_balance": 10852,
+                "transaction_speed": 2,
+                "sender_country": "UK",
+                "receiver_country": "RU",
+                "sender_id": "AUTO1626",
+                "receiver_id": "AUTO3668",
+                "eth_tx_hash": "1a7834be62c62363d6f3fe8fc164a8434c4315a3f01519c64b0aa9a66ad06bb3",
+                "eth_block_number": 2
+            },
+            "kyc_ok": false,
+            "status": "rejected_kyc",
+            "reason": "KYC verification failed",
+            "eth_tx_hash": "1a7834be62c62363d6f3fe8fc164a8434c4315a3f01519c64b0aa9a66ad06bb3",
+            "eth_block_number": 2
+        },
+        "merkle_root": "81468a8a857df5425280a0ba29bbe8c7dc692ae81a3c48dad6efcff8e4ae7e5b",
+        "previous_hash": "8301bad96ca9fa9156e91978d5efc6d05ed44df051538d3fd3ee1abe6d037a4f",
+        "hash": "4b3fc1d2059238a6d4d836b8a9ca6645468fca9093826ce511421343d5945b78",
+        "nonce": 0,
+        "difficulty": 0,
+        "consensus": "poa",
+        "signature": "4fab3491b222d2f39db03a2ff927aa7d5028862ddb58718e3a9f423e85a072cb093e4b2c3ca8745e9e491dce659e875e94751d135630180da502b358eda67e205c6ae6c3e35fb269414eac769410170b23efc33aae012ed719712c160bf1b7680b16cb7b7aa616bfb11db0c20312dad2254c5b1564c05365c0d76f708f2aa08e8ed0dce14c95e6f00b361bf913854fb0ef4fe76ebab9b9c3448831d0fe2bb4cdb30e4c5cfd9dcc0777a2eb0f028e2ddeb61c1753cfb686b61ca6001e27e5ff3a6b048debf65b97d05be3a5eb7d541376c252586223f2d0f0583824edb6d16eb652a17b8ae3c5bf9c02d4937edcc581c7cacbe69293e127f0954ee694a560375e",
+        "public_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs/6AqcwozSX4lHkWsnN7\nJbTHVlzSn3K01JJiT3vN7RI10+WI+TrTOIEMWZYwjcDpO1HdcC8+W99EarS9TWbR\ncLgZ/raD9XiA+CMaupzguma8K1l+F+2vOV7OliEAy2fGSdMSNie5g7yrNjbbkSRs\nZFapZaiJ7B1O4A5RBhwt+t5MQXXEpLl4y7xO95/fXtfVmxTsMSnzoY1EAD9tmowl\n31J5Hz5Qx77I/BKHvUoIW2CSxrlrOioUfCVCuUcor5CqlZJ3gj9BziuXn1IWX4W6\nxVVexNNrnICO8fOWt6EY93kJbVlos1H80MxYUSVUJOkbjW+dAZt0fqSJuRmhXTID\nZwIDAQAB\n-----END PUBLIC KEY-----\n",
+        "authority_id": "0e50610d6be44730",
+        "eth_tx_hash": "1a7834be62c62363d6f3fe8fc164a8434c4315a3f01519c64b0aa9a66ad06bb3",
+        "eth_block_number": 2
+    },
+    {
+        "index": 4,
+        "timestamp": 1764417401,
+        "data": {
+            "external_id": "AUTO-1764417401",
+            "transaction": {
+                "amount": 99918,
+                "sender_balance": 64230,
+                "receiver_balance": 73367,
+                "transaction_speed": 5,
+                "sender_country": "NG",
+                "receiver_country": "IN",
+                "sender_id": "AUTO7755",
+                "receiver_id": "AUTO5340",
+                "eth_tx_hash": "938d3a1c5cd3885e9e533f1210b25936d334f2defa03d25ffa3c4f2162696e13",
+                "eth_block_number": 3
+            },
+            "kyc_ok": false,
+            "status": "rejected_kyc",
+            "reason": "KYC verification failed",
+            "eth_tx_hash": "938d3a1c5cd3885e9e533f1210b25936d334f2defa03d25ffa3c4f2162696e13",
+            "eth_block_number": 3
+        },
+        "merkle_root": "f930f58a16981eef9c5f531de53d0304714b63fb02fd7f37530f93edece008bf",
+        "previous_hash": "4b3fc1d2059238a6d4d836b8a9ca6645468fca9093826ce511421343d5945b78",
+        "hash": "68197fe483704537c514c13a90025c195ff5312514cff74ec0ff80fe191c1d4c",
+        "nonce": 0,
+        "difficulty": 0,
+        "consensus": "poa",
+        "signature": "6e271a64a75175cca7f64881765ebe6d9861311eca5f8236c861f375462bd3d5152f6fbb0c83854ebd7105de7ae81ffb89c284e99e41e9a2fcedb78e1eee9e43ce5efdce6c6262cde4980eec87701741258e3ee491f77efc2b9b38940cfe79755103db98a8d96d4bd88235555e2918c429d41c57b3574153aaca53578076d0e34b1f0c2e71f31d5a63bb9c13268b1656b954be4b117a7a809c967a42f18797fe993275d4933aba783d3e68b6ac4f7c295024aa4dae7d89ca9bc0e6a0a92f37a06b17b6bcf51ece7ec3896e51fc5b3fd4a9a70da3a25bd9b5e706f30b9e6817c74a7ce8a905bdb5c7fdcca65c5f79dffac903ff3f0deb4a2b19323273bd2ea1a4",
+        "public_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs/6AqcwozSX4lHkWsnN7\nJbTHVlzSn3K01JJiT3vN7RI10+WI+TrTOIEMWZYwjcDpO1HdcC8+W99EarS9TWbR\ncLgZ/raD9XiA+CMaupzguma8K1l+F+2vOV7OliEAy2fGSdMSNie5g7yrNjbbkSRs\nZFapZaiJ7B1O4A5RBhwt+t5MQXXEpLl4y7xO95/fXtfVmxTsMSnzoY1EAD9tmowl\n31J5Hz5Qx77I/BKHvUoIW2CSxrlrOioUfCVCuUcor5CqlZJ3gj9BziuXn1IWX4W6\nxVVexNNrnICO8fOWt6EY93kJbVlos1H80MxYUSVUJOkbjW+dAZt0fqSJuRmhXTID\nZwIDAQAB\n-----END PUBLIC KEY-----\n",
+        "authority_id": "0e50610d6be44730",
+        "eth_tx_hash": "938d3a1c5cd3885e9e533f1210b25936d334f2defa03d25ffa3c4f2162696e13",
+        "eth_block_number": 3
+    },
+    {
+        "index": 5,
+        "timestamp": 1764417406,
+        "data": {
+            "external_id": "AUTO-1764417406",
+            "transaction": {
+                "amount": 42274,
+                "sender_balance": 90093,
+                "receiver_balance": 66003,
+                "transaction_speed": 3,
+                "sender_country": "NG",
+                "receiver_country": "SG",
+                "sender_id": "AUTO5538",
+                "receiver_id": "AUTO3094",
+                "eth_tx_hash": "d6af4965ba26de950f3872ff9f10e4b2cabc2cb7388cf35d5e9fbdf740b9f688",
+                "eth_block_number": 4
+            },
+            "kyc_ok": false,
+            "status": "rejected_kyc",
+            "reason": "KYC verification failed",
+            "eth_tx_hash": "d6af4965ba26de950f3872ff9f10e4b2cabc2cb7388cf35d5e9fbdf740b9f688",
+            "eth_block_number": 4
+        },
+        "merkle_root": "832c8210fb31d0928466daee1f08ea22ce2070316d3ff8175a692ef172dffac9",
+        "previous_hash": "68197fe483704537c514c13a90025c195ff5312514cff74ec0ff80fe191c1d4c",
+        "hash": "6fdcc1bb1ec5089bdf338ace3959c244d0d9314554b269a3fe972c0d92ea714c",
+        "nonce": 0,
+        "difficulty": 0,
+        "consensus": "poa",
+        "signature": "875af2eba73c08928dbab6297085c17b43fe3b4603c10942f30cd1d41386dc7769da60c39240d3688aef20b1e981fa8ebd971a5a9322b25ea4ef3807f1aaebcef10f541714015f77a0e6ef0be9b19560b93e94ee52fa537e4c2a25cc6b904d83808fa0394b5e5f32d84e023b27f784ef7c5e40f6fab9eee1ee4551140a7d110c7e82ef98f7ba177cea0f03a270ce306e1b3f68615a2c3c18a256214e616c7020e04b8ed47243b0f71f1e04f084d4be5a248e571c27866de53660b1a12e48f701375e78ae10b0f76cd6e1d661292d94c6712bfbdc71a9bedb490d5132961d72015711818be2f9697b4ee470ea8f937fc42c8249b822bd0ee3e387b2e0f637bed1",
+        "public_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs/6AqcwozSX4lHkWsnN7\nJbTHVlzSn3K01JJiT3vN7RI10+WI+TrTOIEMWZYwjcDpO1HdcC8+W99EarS9TWbR\ncLgZ/raD9XiA+CMaupzguma8K1l+F+2vOV7OliEAy2fGSdMSNie5g7yrNjbbkSRs\nZFapZaiJ7B1O4A5RBhwt+t5MQXXEpLl4y7xO95/fXtfVmxTsMSnzoY1EAD9tmowl\n31J5Hz5Qx77I/BKHvUoIW2CSxrlrOioUfCVCuUcor5CqlZJ3gj9BziuXn1IWX4W6\nxVVexNNrnICO8fOWt6EY93kJbVlos1H80MxYUSVUJOkbjW+dAZt0fqSJuRmhXTID\nZwIDAQAB\n-----END PUBLIC KEY-----\n",
+        "authority_id": "0e50610d6be44730",
+        "eth_tx_hash": "d6af4965ba26de950f3872ff9f10e4b2cabc2cb7388cf35d5e9fbdf740b9f688",
+        "eth_block_number": 4
+    },
+    {
+        "index": 6,
+        "timestamp": 1764417411,
+        "data": {
+            "external_id": "AUTO-1764417411",
+            "transaction": {
+                "amount": 58954,
+                "sender_balance": 31118,
+                "receiver_balance": 67605,
+                "transaction_speed": 4,
+                "sender_country": "NG",
+                "receiver_country": "US",
+                "sender_id": "AUTO9440",
+                "receiver_id": "AUTO6459",
+                "eth_tx_hash": "7142d7cf35c3b3360d7606b10465629fd771f5cf00f91240dd28bc454b010b1c",
+                "eth_block_number": 5
+            },
+            "kyc_ok": false,
+            "status": "rejected_kyc",
+            "reason": "KYC verification failed",
+            "eth_tx_hash": "7142d7cf35c3b3360d7606b10465629fd771f5cf00f91240dd28bc454b010b1c",
+            "eth_block_number": 5
+        },
+        "merkle_root": "67db7bb5d08419d39d19cc138e50d08bcf743b40a76aee4fa76a5c8ac345a05b",
+        "previous_hash": "6fdcc1bb1ec5089bdf338ace3959c244d0d9314554b269a3fe972c0d92ea714c",
+        "hash": "fd6a777bb81829ac80c7394b71766cf78b03c453da6796a9821a15a52ede1700",
+        "nonce": 0,
+        "difficulty": 0,
+        "consensus": "poa",
+        "signature": "8efc4648d827c8610097d913030cb6ed3dc5342d6a96048a12b56f94f3db0b8958e7d15babbb5b8f3e854773054494069eff22b9fa48718bebe7de17f29791b2a57938ea5a138c6e3957121972fc689fab0e9526f0dd41ab4102818f2696bd7693ada529b0643255dfeef7363e6b842e68b3b629e89bf1a64c3b69fbb4000c2de3da187fd2957f28a46fc1a71673a531c57e0a1c5337567bd7a5dc958bc0cb1015a1d89647e95104c0f3f257b0c4a327e614c1ebc2c914fba1a2559d1e66744ccb3434d1822f401e4e1dfb13cf1f0045f0a058f69cf7d53a0d936a1b37e8a00d50487cefc98942b20ed68f2aa8a11ffb81737a0fcc4f16d698e18377770701f5",
+        "public_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs/6AqcwozSX4lHkWsnN7\nJbTHVlzSn3K01JJiT3vN7RI10+WI+TrTOIEMWZYwjcDpO1HdcC8+W99EarS9TWbR\ncLgZ/raD9XiA+CMaupzguma8K1l+F+2vOV7OliEAy2fGSdMSNie5g7yrNjbbkSRs\nZFapZaiJ7B1O4A5RBhwt+t5MQXXEpLl4y7xO95/fXtfVmxTsMSnzoY1EAD9tmowl\n31J5Hz5Qx77I/BKHvUoIW2CSxrlrOioUfCVCuUcor5CqlZJ3gj9BziuXn1IWX4W6\nxVVexNNrnICO8fOWt6EY93kJbVlos1H80MxYUSVUJOkbjW+dAZt0fqSJuRmhXTID\nZwIDAQAB\n-----END PUBLIC KEY-----\n",
+        "authority_id": "0e50610d6be44730",
+        "eth_tx_hash": "7142d7cf35c3b3360d7606b10465629fd771f5cf00f91240dd28bc454b010b1c",
+        "eth_block_number": 5
+    },
+    {
+        "index": 7,
+        "timestamp": 1764417416,
+        "data": {
+            "external_id": "AUTO-1764417416",
+            "transaction": {
+                "amount": 50293,
+                "sender_balance": 69628,
+                "receiver_balance": 39839,
+                "transaction_speed": 5,
+                "sender_country": "US",
+                "receiver_country": "SG",
+                "sender_id": "AUTO7162",
+                "receiver_id": "AUTO2727",
+                "eth_tx_hash": "69b183a55db2b7f4f556de69b2972780c87bd940aa82b4763e203cff5fbd3291",
+                "eth_block_number": 6
+            },
+            "kyc_ok": false,
+            "status": "rejected_kyc",
+            "reason": "KYC verification failed",
+            "eth_tx_hash": "69b183a55db2b7f4f556de69b2972780c87bd940aa82b4763e203cff5fbd3291",
+            "eth_block_number": 6
+        },
+        "merkle_root": "7b47ba51a34896c7fd8abaa26d9138a3a744a26ec2745a93345999eef1f9c929",
+        "previous_hash": "fd6a777bb81829ac80c7394b71766cf78b03c453da6796a9821a15a52ede1700",
+        "hash": "e5880c3a8a19b06d41171fe66985d3e69964ebc03966a87a802f6e4e8ea7a19a",
+        "nonce": 0,
+        "difficulty": 0,
+        "consensus": "poa",
+        "signature": "0b6b07b22023fc5e8dcdfea9142db77e912297188252d301fc0ff5f93bef9fa4a38f7858dc1c0f3ff105ebf581a1a783579e8af02f5aac3b17fa8376fb7e056c5330f518a5b24ddc070821ae9bae3a7065d7b44fdb4d542554ed5bddca3b2f4afa9735ca8a501cfba7c2bbf99cb165447803cb6fb867aea471038b8aea8626e14574a8465584c9ce1376c2868704005e883bd3c7615ce8bedd26058bfa3f699c246c1ade4aae404b8c6a517c7f87603cbda26fa607205abd6246d53e67d9fa9241d381bed93177d278336b3513dafbe41ac535a5f3771aaffa4ddc616a4bc0139ad1a2caf700aa5352bfc1fe3c40567daea4d4777e610697d53a145a78797051",
+        "public_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs/6AqcwozSX4lHkWsnN7\nJbTHVlzSn3K01JJiT3vN7RI10+WI+TrTOIEMWZYwjcDpO1HdcC8+W99EarS9TWbR\ncLgZ/raD9XiA+CMaupzguma8K1l+F+2vOV7OliEAy2fGSdMSNie5g7yrNjbbkSRs\nZFapZaiJ7B1O4A5RBhwt+t5MQXXEpLl4y7xO95/fXtfVmxTsMSnzoY1EAD9tmowl\n31J5Hz5Qx77I/BKHvUoIW2CSxrlrOioUfCVCuUcor5CqlZJ3gj9BziuXn1IWX4W6\nxVVexNNrnICO8fOWt6EY93kJbVlos1H80MxYUSVUJOkbjW+dAZt0fqSJuRmhXTID\nZwIDAQAB\n-----END PUBLIC KEY-----\n",
+        "authority_id": "0e50610d6be44730",
+        "eth_tx_hash": "69b183a55db2b7f4f556de69b2972780c87bd940aa82b4763e203cff5fbd3291",
+        "eth_block_number": 6
+    }
+]

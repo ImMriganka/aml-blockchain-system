@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Blockchain Explorer</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        margin: 2rem;
+        background: #0b1120;
+        color: #e5e7eb;
+      }
+      h1, h2 { margin-bottom: 0.5rem; }
+      .card {
+        background: #020617;
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+        max-width: 1100px;
+        border: 1px solid #111827;
+        margin-bottom: 2rem;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+        font-size: 0.85rem;
+      }
+      th, td {
+        padding: 0.45rem 0.5rem;
+        border-bottom: 1px solid #1f2937;
+        text-align: left;
+      }
+      th { color: #9ca3af; font-weight: 500; }
+      .muted { color: #9ca3af; font-size: 0.85rem; }
+      .btn {
+        padding: 8px 14px;
+        border-radius: 6px;
+        background: #2563eb;
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 10px;
+      }
+      .btn:hover { background: #1d4ed8; }
+      .btn-secondary {
+        background: #6b7280;
+      }
+      .btn-secondary:hover {
+        background: #4b5563;
+      }
+      .json-box {
+        background: #0f172a;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border: 1px solid #1f2937;
+        font-family: monospace;
+        font-size: 0.8rem;
+        white-space: pre-wrap;
+        word-break: break-all;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Blockchain Explorer</h1>
+    <p class="muted">Debug or inspect raw blocks stored in the local blockchain ledger.</p>
+
+    <!-- Back button -->
+    <p>
+      <a href="{{ url_for('index') }}" class="btn-secondary btn">← Back to AML UI</a>
+    </p>
+
+    {% if block %}
+    <!-- ========================= -->
+    <!--   SINGLE BLOCK VIEW      -->
+    <!-- ========================= -->
+    <div class="card">
+      <h2>Block #{{ block.index }}</h2>
+      <p class="muted">Full block details</p>
+
+      <table>
+        <tr>
+          <th>Index</th>
+          <td>{{ block.index }}</td>
+        </tr>
+        <tr>
+          <th>Timestamp</th>
+          <td>{{ block.timestamp | int | datetimeformat }}</td>
+        </tr>
+        <tr>
+          <th>Hash</th>
+          <td style="font-family:monospace;">{{ block.hash }}</td>
+        </tr>
+        <tr>
+          <th>Previous Hash</th>
+          <td style="font-family:monospace;">{{ block.prev_hash }}</td>
+        </tr>
+      </table>
+
+      <h3 style="margin-top:1rem;">Data</h3>
+      <div class="json-box">
+        {{ block.data | tojson(indent=2) }}
+      </div>
+
+      <a href="{{ url_for('explorer') }}" class="btn btn-secondary">← All Blocks</a>
+    </div>
+
+    {% else %}
+    <!-- ========================= -->
+    <!--   BLOCK LIST VIEW         -->
+    <!-- ========================= -->
+    <div class="card">
+      <h2>All Blocks</h2>
+      <p class="muted">Showing {{ blocks|length }} blocks</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Index</th>
+            <th>Timestamp</th>
+            <th>Hash</th>
+            <th>External ID</th>
+            <th>Status</th>
+            <th>Fraud %</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for b in blocks %}
+          <tr>
+            <td>{{ b.index }}</td>
+            <td>{{ b.timestamp | int | datetimeformat }}</td>
+            <td style="font-family:monospace; font-size:0.75rem;">
+              {{ b.hash[:12] }}...
+            </td>
+            <td>{{ b.data.external_id or '-' }}</td>
+            <td>{{ b.data.status or '-' }}</td>
+            <td>
+              {% if b.data.fraud_probability is defined %}
+                {{ (b.data.fraud_probability * 100) | round(2) }}%
+              {% else %}
+                N/A
+              {% endif %}
+            </td>
+            <td>
+              <a href="{{ url_for('explorer_block', index=b.index) }}" class="btn btn-secondary">
+                View
+              </a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+    </div>
+    {% endif %}
+  </body>
+</html>
