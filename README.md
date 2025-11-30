@@ -1,127 +1,163 @@
-📌 AML-FraudShield – Anti-Money Laundering System Using Blockchain & Machine Learning
-🚀 End-to-End AML Transaction Monitoring System
+# 🚀 LedgerLock – AI & Blockchain AML System
 
-Tech Stack: Python · Flask · Machine Learning · Pandas · Scikit-learn · Blockchain · Chart.js · HTML/CSS
+> **A hybrid Anti-Money Laundering (AML) detection system combining Machine Learning transparency with Blockchain immutability.**
 
-✨ Overview
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Flask](https://img.shields.io/badge/Flask-2.0%2B-green)
+![Solidity](https://img.shields.io/badge/Solidity-0.8.0-363636)
+![License](https://img.shields.io/badge/license-MIT-orange)
 
-AML-FraudShield is a full-stack AML (Anti-Money Laundering) prototype that detects suspicious financial transactions using:
+## 📖 Overview
 
-✔ Machine Learning fraud scoring
+**LedgerLock** is an open-source framework designed to solve the "black box" problem in financial fraud detection. It uses **Machine Learning** to predict fraud probability and a **Custom Local Blockchain** (anchored to Ethereum) to create a tamper-proof audit trail of those predictions.
 
-✔ Rule-based transaction analysis
+This system ensures that once a transaction is flagged and recorded, the data cannot be altered, providing a verifiable history for auditors.
 
-✔ KYC identity validation
+---
 
-✔ Blockchain-based immutable audit logs
+## ✨ Key Features
 
-✔ Interactive web UI with charts and history explorer
+### ✅ 1. AI-Powered Fraud Detection
+Utilizes a **Scikit-learn** model to analyze transaction metadata in real-time.
+* Calculates Fraud Probability & AML Risk Level.
+* Automated KYC checks and compliance rule verification.
 
-This project demonstrates how modern AML pipelines work inside banks, FinTech platforms, cross-border payment systems, and compliance engines.
+### ✅ 2. Custom Local Blockchain (The Audit Layer)
+Every evaluated transaction is sealed into a block containing:
+* **Merkle Root:** For efficient data verification.
+* **RSA Digital Signatures:** Ensures block authenticity.
+* **Timestamp & Previous Hash:** Enforces chronological chain integrity.
 
-🧠 Features
-🔍 1. Fraud Detection Pipeline
+### ✅ 3. Ethereum Smart Contract Integration
+Critical data is anchored to the Ethereum network via `LedgerLockAML.sol`.
+* Stores: External ID, Amount, and Fraud Flag permanently.
+* Powered by **Hardhat** local development environment.
 
-ML model predicts fraud probability (0–1 scale).
+### ✅ 4. Real-Time Dashboard
+A **Flask** web interface providing:
+* Live visualization of the blockchain.
+* Risk Heatmaps and Transaction Simulators.
+* Links to Ethereum Tx Hashes.
 
-Custom rules identify:
+---
 
-unusual amounts
+## 🛠️ Tech Stack
 
-balance inconsistencies
+| Component | Technologies |
+| :--- | :--- |
+| **Backend** | Python, Flask |
+| **Machine Learning** | Scikit-learn, Pandas, NumPy |
+| **Blockchain (Local)** | Python (Custom Chain), RSA Encryption, Merkle Trees |
+| **Blockchain (Public)** | Solidity, Hardhat, Web3.py |
+| **Frontend** | HTML5, CSS3, Chart.js (Dashboard) |
 
-velocity (transaction speed) anomalies
+---
 
-risky cross-border routes
+## 📂 Project Structure
 
-🪪 2. KYC Validation
+```text
+ledgerlock/
+│
+├── aml/                 # AML pipeline & Business Logic
+│   └── pipeline.py
+│
+├── blockchain/          # Custom Python Blockchain Implementation
+│   ├── local_chain.py
+│   └── contracts_LedgerLockAML.sol
+│
+├── ml_model/            # Machine Learning Inference
+│   └── model_inference.py
+│
+├── eth/                 # Hardhat (Ethereum) Environment
+│   ├── contracts/
+│   ├── scripts/
+│   └── hardhat.config.js
+│
+├── templates/           # Flask UI Templates
+│   └── index.html
+│
+├── static/              # Assets (JS, CSS, Images)
+├── app.py               # Main Flask Application
+├── requirements.txt     # Python Dependencies
+└── README.md
 
-Checks sender/receiver identities.
 
-Flags invalid or mismatched KYC IDs.
 
-🔗 3. Blockchain Ledger
+## 🚀 Installation & Setup
 
-Every transaction evaluation is stored as a blockchain block:
+### 1\. Clone the Repository
 
-index
+```bash
+git clone [https://github.com/ImMriganka/ledgerlock-aml-system.git](https://github.com/ImMriganka/ledgerlock-aml-system.git)
+cd ledgerlock-aml-system
+```
 
-timestamp
+### 2\. Install Python Dependencies
 
-transaction data
+It is recommended to use a virtual environment.
 
-ML score
-
-rule-based decision
-
-SHA-256 hash
-
-previous hash
-
-This ensures tamper-proof auditability.
-
-📊 4. Web UI Dashboard
-
-Clean dark UI
-
-Fraud probability line chart
-
-Transaction evaluation console
-
-Paginated blockchain explorer
-
-CSV download of the audit chain
-
-Filters: search by ID, status, pagination
-
-🧱 Architecture
-User → Web UI → Flask Backend → AML Pipeline → ML Model
-                                          ↘ Blockchain Ledger
-
-📦 Project Structure
-/aml
-   ├── pipeline.py
-/blockchain
-   ├── local_chain.py
-/ml_model
-   ├── model_inference.py
-/templates
-   ├── index.html
-   ├── explorer.html
-app.py
-
-▶️ How to Run
-1. Install dependencies
+```bash
 pip install -r requirements.txt
+```
 
-2. Start the app
+### 3\. Start the Local Ethereum Node (Hardhat)
+
+Open a new terminal window:
+
+```bash
+cd eth
+npx hardhat node
+```
+
+### 4\. Deploy Smart Contract
+
+In a separate terminal (keep the node running):
+
+```bash
+cd eth
+npx hardhat run scripts/deploy.js --network localhost
+```
+
+*Note the contract address output and update your `app.py` config if necessary.*
+
+### 5\. Run the Application
+
+```bash
+# Return to the root directory
+cd ..
 python app.py
+```
 
-3. Open UI
-http://127.0.0.1:5000
+**Access the Dashboard:** 👉 `http://127.0.0.1:5000`
 
-📁 CSV Audit Export
+-----
 
-Download all blockchain records via:
+## 📦 API Routes
 
-/download_audit
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `GET` | `/` | Home Dashboard & Stats |
+| `POST` | `/` | Submit a Manual Transaction for Analysis |
+| `GET` | `/api/chain` | Retrieve recent blocks from the local chain |
+| `GET` | `/api/risk-map` | Get data for the Risk Heatmap visualization |
 
-🧪 API Example
-GET /api/chain?limit=30
+-----
 
+## 🔐 Security Architecture
 
-Returns recent blockchain blocks in JSON.
+  * **RSA Signatures:** Each block is signed by a private RSA key and verified using a public key to prevent identity spoofing.
+  * **Immutable Storage:** `storeEvaluation` function in Solidity ensures that once an AML score is written to Ethereum, it cannot be deleted.
 
-📌 Future Enhancements
+-----
 
-Real-time streaming ingestion
+## 📄 License
 
-Graph-based entity link analysis
+This project is licensed under the **MIT License**. See the `LICENSE` file for full details.
 
-Advanced ML models (XGBoost, DNN)
+## 🙌 Author
 
-Risk dashboards for compliance officers
+**Mriganka Bairagi**
 
-📝 License
+  * Open Source Software Project – AML + Blockchain System
+  * GitHub: [@ImMriganka](https://www.google.com/search?q=https://github.com/ImMriganka)
 
-MIT
